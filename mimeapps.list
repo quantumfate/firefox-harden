@@ -1,0 +1,23 @@
+[Added Associations]
+x-scheme-handler/http=zen-dispatcher.desktop;
+x-scheme-handler/https=zen-dispatcher.desktop;
+x-scheme-handler/chrome=zen-dispatcher.desktop;
+text/html=zen-dispatcher.desktop;
+application/x-extension-htm=zen-dispatcher.desktop;
+application/x-extension-html=zen-dispatcher.desktop;
+application/x-extension-shtml=zen-dispatcher.desktop;
+application/xhtml+xml=zen-dispatcher.desktop;
+application/x-extension-xhtml=zen-dispatcher.desktop;
+application/x-extension-xht=zen-dispatcher.desktop;
+
+[Default Applications]
+application/x-extension-htm=zen-dispatcher.desktop;
+application/x-extension-html=zen-dispatcher.desktop;
+application/x-extension-shtml=zen-dispatcher.desktop;
+application/x-extension-xht=zen-dispatcher.desktop;
+application/x-extension-xhtml=zen-dispatcher.desktop;
+application/xhtml+xml=zen-dispatcher.desktop;
+text/html=zen-dispatcher.desktop;
+x-scheme-handler/http=zen-dispatcher.desktop;
+x-scheme-handler/https=zen-dispatcher.desktop;
+x-scheme-handler/chrome=zen-dispatcher.desktop;
