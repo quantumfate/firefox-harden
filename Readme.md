@@ -5,6 +5,7 @@ Works with any Firefox based browser -- I'm using [Zen-Twilight](https://zen-bro
 
 Requirements:
 
+- [Pyothon 3.10+](https://www.python.org/downloads/) to encode URLs
 - [Open external links in a container](https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/) Firefox Extension
 - [Firefox Multi-Account Containers (Recommended)](https://addons.mozilla.org/en-US/firefox/search/?q=Firefox%20Multi-Account%20Containers) Firefox Extension
 - [UWSM (Optional)](https://github.com/Vladimir-csp/uwsm)

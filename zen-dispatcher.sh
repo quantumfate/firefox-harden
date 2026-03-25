@@ -67,9 +67,12 @@ case "$URL" in
   exit 0
   ;;
 esac
+# URL-encode the target URL
+
+ENCODED_URL=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$URL")
 
 if command -v uwsm-app &>/dev/null; then
-  uwsm-app -- zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$URL"
+  uwsm-app -- zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$ENCODED_URL"
 else
-  zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$URL"
+  zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$ENCODED_URL"
 fi
