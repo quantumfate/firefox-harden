@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 PROFILE_MANAGER=false
 PRIVATE=false
-# Parse flags
+
 while [[ "$1" == -* ]]; do
   case "$1" in
   --ProfileManager)
@@ -16,6 +16,7 @@ while [[ "$1" == -* ]]; do
   esac
 done
 URL="$1"
+
 # Only allow https and localhost
 case "$URL" in
 https://*) ;;
@@ -30,14 +31,6 @@ esac
 ARGS=()
 [[ "$PROFILE_MANAGER" == true ]] && ARGS+=(--ProfileManager)
 [[ "$PRIVATE" == true ]] && ARGS+=(--private-window)
-
-# Bypass container routing for certain domains
-case "$URL" in
-*proton.me*)
-  uwsm-app -- zen-twilight "${ARGS[@]}" "$URL"
-  exit 0
-  ;;
-esac
 
 # Define domain → container mappings
 case "$URL" in
@@ -71,6 +64,7 @@ esac
 
 ENCODED_URL=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$URL")
 
+ENCODED_URL=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$URL")
 if command -v uwsm-app &>/dev/null; then
   uwsm-app -- zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$ENCODED_URL"
 else
