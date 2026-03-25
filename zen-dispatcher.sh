@@ -27,12 +27,10 @@ http://localhost* | http://\[::1\]*) ;;
   ;;
 esac
 
-# Build args
 ARGS=()
 [[ "$PROFILE_MANAGER" == true ]] && ARGS+=(--ProfileManager)
 [[ "$PRIVATE" == true ]] && ARGS+=(--private-window)
 
-# Define domain → container mappings
 case "$URL" in
 *claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *linkedin.com* | http*://127.0.0.1* | localhost*)
   CONTAINER="Productivity"
@@ -60,9 +58,6 @@ case "$URL" in
   exit 0
   ;;
 esac
-# URL-encode the target URL
-
-ENCODED_URL=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$URL")
 
 ENCODED_URL=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$URL")
 if command -v uwsm-app &>/dev/null; then
