@@ -1,13 +1,13 @@
 # Firefox Desktop Hardening
 
 Routing [xdg-open](https://linux.die.net/man/1/xdg-open) to specified [Firefox Containers](https://support.mozilla.org/en-US/kb/how-use-firefox-containers) and/or [Firefox Profiles](https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles?redirectslug=profile-manager-create-and-remove-firefox-profiles&redirectlocale=en-US) to enforce [PERSEC/OPSEC](https://www.militaryspot.com/resources/opsec-and-persec).
-Works with any Firefox based browser -- I'm using [Zen-Twilight](https://zen-browser.app/).
+Works with any Firefox based browser - I'm using [Zen-Twilight](https://zen-browser.app/).
 
 Requirements:
 
 - [Pyothon 3.10+](https://www.python.org/downloads/) to encode URLs
-- [Open external links in a container](https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/) Firefox Extension
-- [Firefox Multi-Account Containers (Recommended)](https://addons.mozilla.org/en-US/firefox/search/?q=Firefox%20Multi-Account%20Containers) Firefox Extension
+- [Open external links in a container](https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/) Firefox Extension that provides the custom protocol handler
+- [Firefox Multi-Account Containers (Recommended)](https://addons.mozilla.org/en-US/firefox/search/?q=Firefox%20Multi-Account%20Containers) Firefox Extension to route URLs inside the browser to specified a container
 - [UWSM (Optional)](https://github.com/Vladimir-csp/uwsm)
 
 ## Setup
