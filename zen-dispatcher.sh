@@ -19,13 +19,24 @@ URL="$1"
 
 # Only allow https and localhost
 case "$URL" in
-https://*) ;;
-http://localhost* | http://\[::1\]*) ;;
+https://* | *http://*) ;;
 *)
   notify-send "Zen Dispatcher" "Blocked non-HTTPS URL: $URL"
   exit 1
   ;;
 esac
+
+# TODO: uncomment if using dev
+# case "$URL" in
+# http://127.0.0.1* | https://127.0.0.1* | http://localhost* | https://localhost* | http://\[::1\]* | https://\[::1\]*)
+#   if command -v uwsm-app &>/dev/null; then
+#     uwsm-app -- firefox-developer-edition "$URL"
+#   else
+#     firefox-developer-edition "$URL"
+#   fi
+#   exit 0
+#   ;;
+# esac
 
 ARGS=()
 [[ "$PROFILE_MANAGER" == true ]] && ARGS+=(--ProfileManager)
